@@ -1,0 +1,11 @@
+Spacebar: play or pause the song
+Shift Spacebar: play from mouse location
+Z: undo, Y or Shift Z: redo
+C/V: copy/paste selected pattern(s)
+0-9: assign pattern number to selection
+Arrows: move selection
+Ctrl + Arrows: rearrange channels
+[ ]: move playhead backward or forward
+F/H: move to First or Highlighted pattern
+Shift & Drag: select part of a pattern (long press on touch screen)
+Check BeepBox's edit menu for more!

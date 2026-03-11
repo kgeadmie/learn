@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            p {
+                color: #000000;
+                font-size: 300px;
+            }
+            body {
+                background-color: #ffffff;
+            }
+        </style>
+    </head>
+    <body>
+        <p id='p'>No.</p>
+        <script>
+            var p = document.getElementById('p')
+            var t = false
+            
+            function a() {
+                t = !t
+                if (t) {
+                    p.style.color = '#ffffff'
+                    document.body.style.backgroundColor = "#000000"
+                } else {
+                    p.style.color = '#000000'
+                    document.body.style.backgroundColor = "#ffffff"
+                }
+                
+                requestAnimationFrame(a)
+            }
+            
+            requestAnimationFrame(a)
+        </script>
+    </body>
+</html>

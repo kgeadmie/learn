@@ -23,23 +23,23 @@
 </head>
 <body>
     <script type="py" terminal worker>
-        import code, js
-        from pyscript import fs, ffi
+        import code#, js
+        from pyscript import fs#, ffi
 
         print(dir(js))
-        print(dir(pyscript))
+        #print(dir(pyscript))
 
-        def resizeWin():
-            winwidth=js.window.innerWidth
-            winheight=js.window.innerHeight
-            cols=int(winwidth/8)
-            rows=int(winheight/17)
-            if '__terminal__' in locals():
-                __terminal__.resize(cols, rows)
+        #def resizeWin():
+        #    winwidth=js.window.innerWidth
+        #    winheight=js.window.innerHeight
+        #    cols=int(winwidth/8)
+        #    rows=int(winheight/17)
+        #    if '__terminal__' in locals():
+        #        __terminal__.resize(cols, rows)
         
-        resizeWin()
+        #resizeWin()
 
-        js.window.addEventListener('resize', resizeWin)
+        #js.window.addEventListener('resize', resizeWin)
         
         fs.mount('/fs-con', mode='readwrite')
         

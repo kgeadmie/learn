@@ -41,7 +41,7 @@
 
         #js.window.addEventListener('resize', resizeWin)
         
-        fs.mount('/fs-con', mode='readwrite')
+        await fs.mount('/fs-con', mode='readwrite')
         
         code.interact()
     </script>

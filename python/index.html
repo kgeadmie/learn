@@ -23,26 +23,18 @@
 </head>
 <body>
     <script type="py" terminal worker>
-        import code#, js
-        from pyscript import fs#, ffi
-
-        #print(dir(js))
-        #print(dir(pyscript))
-
-        #def resizeWin():
-        #    winwidth=js.window.innerWidth
-        #    winheight=js.window.innerHeight
-        #    cols=int(winwidth/8)
-        #    rows=int(winheight/17)
-        #    if '__terminal__' in locals():
-        #        __terminal__.resize(cols, rows)
-        
-        #resizeWin()
-
-        #js.window.addEventListener('resize', resizeWin)
+        import code, asyncio, os
+        from pyscript import fs
         
         await fs.mount('/fs-con', mode='readwrite')
         
+        async def _sync(*args):
+            fs.sync('/fs-con')
+        def sync():
+            asyncio.run(_sync())
+
+        os.chdir('/fs-con')
+        print(os.getcwd())
         code.interact()
     </script>
 </body>

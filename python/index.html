@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>"and its a stick!"</title>
+    <script src="./mini-coi-fd.js"></script>
+    <script type="module" src="./pyscript/core.js" offline></script>
+    <link rel="stylesheet" href="./pyscript/core.css">
+</head>
+<body>
+    <script type="py" terminal worker>
+        import pyscript, code
+        
+        pyscript.fs.mount('/fs-con', mode='readwrite')
+        
+        code.interact()
+    </script>
+</body>
+</html>

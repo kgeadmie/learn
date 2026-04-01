@@ -6,12 +6,39 @@
     <script src="./mini-coi-fd.js"></script>
     <script type="module" src="./pyscript/core.js" offline></script>
     <link rel="stylesheet" href="./pyscript/core.css">
+    <style>
+        body{
+            margin:0;
+            padding: 0;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+        }
+        #pyscript_terminal {
+            flex-grow: 1;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
     <script type="py" terminal worker>
-        import pyscript, code
+        import code, js
+        from pyscript import fs, ffi
+
+        def resizeWin():
+            winwidth=js.window.innerWidth
+            winheight=js.window.innerHeight
+            cols=int(winwidth/8)
+            rows=int(winheight/17)
+            if '__terminal__' in locals():
+                __terminal__.resize(cols, rows)
         
-        pyscript.fs.mount('/fs-con', mode='readwrite')
+        resizeWin()
+
+        js.window.addEventListener('resize', resizeWin)
+        
+        fs.mount('/fs-con', mode='readwrite')
         
         code.interact()
     </script>
